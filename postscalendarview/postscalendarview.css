@@ -1,0 +1,410 @@
+@charset "UTF-8";
+
+
+.postscalendarview.grid .close,
+.postscalendarview.list .close {
+	color: #fff !important;
+	background-color: #D6D6D6 !important;
+}
+
+.postscalendarview.tiny .close {
+	color: #ddd !important;
+}
+
+.postscalendarview a.pcve.pcv_event:link,
+.postscalendarview a.pcve.pcv_event:visited,
+.postscalendarview a.pcvepcv_.event:active {
+	color: #333 !important;
+	background-color: #FFDDD3 !important;
+}
+.postscalendarview a.pcve.pcv_event:hover {
+	background-color: #FFF8CD !important;
+}
+
+.postscalendarview  a.pcve.pcv_reserve:link,
+.postscalendarview  a.pcve.pcv_reserve:visited,
+.postscalendarview  a.pcve.pcv_reserve:active {
+	color: #333 !important;
+	background-color: #BCEBFF !important;
+}
+.postscalendarview a.pcve.pcv_reserve:hover {
+	background-color: #FFF8CD !important;
+}
+
+
+/* common *********************************************************************/
+.postscalendarview {
+	clear: both;
+	width: 100%;
+	margin: 40px 0;
+}
+
+.postscalendarview .calendar {
+	width: 100%;
+}
+
+.postscalendarview .yearmonth {
+	font-size: 2em;
+	letter-spacing: 2px;
+}
+
+.postscalendarview .navi {
+	margin: 16px 0;
+}
+
+.postscalendarview .calendar .week .day.outside {
+	background-color: #f7f7f7;
+}
+
+.postscalendarview .calendar .week .day.outside .label {
+	color: #aaa;
+}
+
+
+/* grid ***********************************************************************/
+.postscalendarview.grid .calendar .header {
+	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+}
+
+.postscalendarview.grid .calendar .week {
+	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+}
+
+.postscalendarview.grid .calendar .header .day {
+	box-sizing: border-box;
+	width: calc(100% / 7);
+}
+
+.postscalendarview.grid .calendar .week .day {
+	box-sizing: border-box;
+	width: calc(100% / 7);
+}
+
+.postscalendarview.grid .calendar .header .day {
+	padding: 8px 0;
+	text-align: center;
+	font-size: smaller;
+	color: #313131;
+	border-bottom: 1px solid #aaa;
+}
+
+.postscalendarview.grid .calendar .week .day {
+ 	min-height: 110px;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #eee;
+}
+.postscalendarview.grid .calendar .week:last-child .day {
+	border-bottom: 1px solid #eee;
+}
+.postscalendarview.grid .calendar .week .day:last-child {
+	border-right: 1px solid #eee;
+}
+
+.postscalendarview.grid .calendar .week .day .label {
+	margin: 8px;
+	text-align: right;
+	font-size: smaller;
+}
+
+.postscalendarview.grid .calendar .week .day .label .dayofweek {
+	display: none;
+}
+
+.postscalendarview.grid .calendar .week .day .pcve_list {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.postscalendarview.grid .calendar .week .day a.pcve,
+.postscalendarview.grid .calendar .week .day .dummy {
+	display: block;
+	box-sizing: border-box;
+	margin: 6px;
+	padding: 6px;
+	color: #fff;
+	line-height: calc(1em + 4px);
+	text-decoration: none;
+	background-color: #999;
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+.postscalendarview.grid.dispband .calendar .week .day a.pcve.repeat_first {
+	margin: 6px 0 6px 6px;
+	border-radius: 6px 0 0 6px;
+	position: relative;
+	z-index: 10;
+}
+
+.postscalendarview.grid.dispband .calendar .week .day a.pcve.repeat_last {
+	margin: 6px 6px 6px 0;
+	border-radius: 0 6px 6px 0;
+}
+
+.postscalendarview.grid.dispband .calendar .week .day a.pcve.repeat_middle {
+	margin: 6px 0;
+	border-radius: 0;
+}
+
+.postscalendarview.grid.dispband .calendar .week .day a.pcve.repeat_first.repeat_last {
+	margin: 6px;
+	border-radius: 6px;
+}
+
+.postscalendarview.grid .calendar .week .day a.pcve .fig {
+	display: none;
+}
+
+.postscalendarview.grid .calendar .week .day a.pcve .category {
+	display: none;
+}
+
+.postscalendarview.grid .calendar .week .day a.pcve .time {
+	font-size: 0.8em;
+}
+
+.postscalendarview.grid .calendar .week .day a.pcve .excerpt {
+	display: none;
+}
+
+.postscalendarview.grid .calendar .week .day a.pcve .tags {
+	display: none;
+}
+
+.postscalendarview.grid .calendar .week .day a.pcve .go2post {
+	display: none;
+}
+
+.postscalendarview.grid.dispband .repeat:not(.band) {
+	visibility: hidden;
+}
+
+.postscalendarview.grid.dispband .dummy {
+	visibility: hidden;
+}
+
+.postscalendarview.grid .band {
+	position: relative;
+	box-sizing: border-box;
+	visibility: visible;
+	background-color: #ff0;
+	z-index: 5;
+}
+
+#postscalendarview.grid .eventinfo {
+	display: none;
+}
+
+
+/* list ***********************************************************************/
+.postscalendarview.list .calendar {
+	border-bottom: 1px solid #ccc;
+}
+
+.postscalendarview.list .calendar .week {
+	display: block;
+}
+
+.postscalendarview.list .calendar .header {
+	display: none;
+}
+
+.postscalendarview.list .calendar .week .day {
+	display: flex;
+	width: 100%;
+	border-top: 1px solid #ccc;
+}
+
+.postscalendarview.list .calendar .week .day.outside {
+	display: none;
+}
+
+.postscalendarview.list .calendar .week .day .label {
+	display: block;
+	box-sizing: border-box;
+	width: 80px;
+	margin: 0;
+	padding: 8px;
+	text-align: center;
+	border-right: 1px dashed #ccc;
+}
+
+.postscalendarview.list .calendar .week .day .label .daynumber {
+	padding: 16px 0;
+	font-size: larger;
+}
+
+.postscalendarview.list .calendar .week .day .label .dayofweek {
+	display: block;
+	margin: 0 0 8px 0;
+}
+
+.postscalendarview.list .pcve_list {
+	width: 100%;
+	padding: 0 8px;
+}
+
+.postscalendarview.list .calendar .week .day a.pcve {
+	display: block;
+	box-sizing: border-box;
+	padding: 6px;
+	margin: 8px 0;
+	color: #fff;
+	text-decoration: none;
+	line-height: calc(1em + 4px);
+	background-color: #999;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.postscalendarview.list .calendar .week .day a.pcve .time {
+	font-size: 0.8em;
+}
+
+.postscalendarview.list .calendar .week .day a.pcve .fig {
+	display: none;
+}
+
+.postscalendarview.list .calendar .week .day a.pcve .category {
+	display: none;
+}
+
+.postscalendarview.list .calendar .week .day a.pcve .excerpt {
+	display: none;
+}
+
+.postscalendarview.list .calendar .week .day a.pcve .tags {
+	display: none;
+}
+
+.postscalendarview.list .calendar .week .day a.pcve .go2post {
+	display: none;
+}
+
+#postscalendarview.list .eventinfo {
+	display: none;
+}
+
+
+/* tiny ***********************************************************************/
+.postscalendarview.tiny .calendar {
+	width: 300px;
+	margin: 16px 0;
+}
+
+.postscalendarview.tiny .calendar .header {
+	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+	margin: 16px 0;
+}
+
+.postscalendarview.tiny .calendar .header .day {
+	position: relative;
+	width: calc(100% / 7);
+	text-align: center;
+}
+
+.postscalendarview.tiny .calendar .week {
+	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+}
+
+.postscalendarview.tiny .calendar .week .day {
+	position: relative;
+	box-sizing: border-box;
+	width: calc(100% / 7);
+	padding: 8px 0;
+}
+
+.postscalendarview.tiny .calendar .week .day .label {
+	position: relative;
+	width: 2em;
+	height: 2em;
+	margin: 0 auto;
+}
+
+.postscalendarview.tiny .calendar .week .day.have_event .label {
+	color: #fff;
+	background-color: #f99;
+	border-radius: 50%;
+}
+
+.postscalendarview.tiny .calendar .week .day.have_event.selected .label {
+	background-color: #FF2600;
+}
+
+.postscalendarview.tiny.dispdetail .calendar .week .day.have_event .label {
+	cursor: pointer;
+}
+
+.postscalendarview.tiny .calendar .week .day .label .daynumber {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.postscalendarview.tiny .calendar .week .day .label .dayofweek {
+	display: none;
+}
+
+.postscalendarview.tiny .calendar .week .day a.pcve {
+	display: none;
+}
+
+.postscalendarview.tiny .detail {
+	width: 300px;
+	margin: 16px 0;
+}
+
+.postscalendarview.tiny .detail a.pcve {
+	display: block;
+	margin: 16px 0;
+	padding: 16px;
+	color: #000;
+	border-radius: 4px;
+	text-decoration: none;
+}
+
+.postscalendarview.tiny .detail a.pcve .fig {
+	max-width: 100%;
+	margin: 0 0 1em 0;
+}
+
+.postscalendarview.tiny .detail a.pcve .category {
+	margin-bottom: 8px;
+	font-size: smaller;
+}
+
+.postscalendarview.tiny .detail a.pcve .time {
+	margin-bottom: 4px;
+	font-size: 0.8em;
+}
+
+.postscalendarview.tiny .detail a.pcve .name {
+	margin-bottom: 12px;
+	font-weight: bold;
+}
+
+.postscalendarview.tiny .detail a.pcve .excerpt {
+	margin-bottom: 4px;
+	font-size: smaller;
+}
+
+.postscalendarview.tiny .detail a.pcve .tags {
+	margin-bottom: 4px;
+	font-size: smaller;
+}
+
+.postscalendarview.tiny .detail a.pcve .go2post {
+	text-align: right;
+	font-size: smaller;
+}
+
